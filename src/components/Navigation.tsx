@@ -54,6 +54,7 @@ function Navigation({parentToChild, modeChange}: any) {
       console.log('Scrolling to:', expertiseElement); 
     } else {
       console.error('Element with id "expertise" not found');  
+    }
   };
 
   const drawer = (
