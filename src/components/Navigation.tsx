@@ -51,10 +51,9 @@ function Navigation({parentToChild, modeChange}: any) {
     const expertiseElement = document.getElementById(section);
     if (expertiseElement) {
       expertiseElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('Scrolling to:', expertiseElement);  // Debugging: Ensure the element is found
+      console.log('Scrolling to:', expertiseElement); 
     } else {
-      console.error('Element with id "expertise" not found');  // Debugging: Log error if element is not found
-    }
+      console.error('Element with id "expertise" not found');  
   };
 
   const drawer = (
@@ -107,7 +106,7 @@ function Navigation({parentToChild, modeChange}: any) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },

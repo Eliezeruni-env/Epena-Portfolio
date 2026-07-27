@@ -1,6 +1,5 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// 1. Importa la imagen con una ruta válida usando barras diagonales
 import portfolioImg from "../assets/images/portfolioImg.jpg";
 import "../assets/styles/Main.scss";
 
@@ -9,7 +8,6 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          {/* 2. Usa la variable de la imagen importada entre llaves */}
           <img src={portfolioImg} alt="Avatar" />
         </div>
         <div className="content">
