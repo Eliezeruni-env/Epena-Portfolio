@@ -1,86 +1,135 @@
-# Developer Portfolio Template 🚀
+<div align="center">
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+# 👋 Hola, soy Eliezer Peña
+### Backend-Focused Full Stack Developer
 
-## What is this?
+*Construyo APIs robustas, sistemas empresariales escalables e integraciones que resuelven problemas reales de negocio.*
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](#)
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+![Profile Views](https://komarev.com/ghpvc/?username=eliezerpena&color=blueviolet&style=for-the-badge)
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+</div>
 
-![screenshot](./src/assets//images/screenshot.png)
+---
 
-## Features
+## 🧭 About Me
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+Soy un **Full Stack Developer** especializado en **backend y arquitectura de sistemas**, con experiencia construyendo APIs, ERPs, dashboards e integraciones para entornos empresariales. Me apasiona diseñar soluciones **escalables, seguras y mantenibles**, y disfruto trabajar en equipos remotos ágiles donde el impacto técnico se traduce directamente en valor de negocio.
 
-## Quick Setup
+- 🔭 Enfocado en **arquitectura de APIs** y sistemas distribuidos
+- 🏢 Experiencia en integraciones **ERP, POS y dashboards** para entornos corporativos
+- 🌍 Disponible para **posiciones remotas** — backend / full stack
+- ⚡ Me interesa el código limpio, la performance y la buena documentación
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+---
 
-    ```bash
-    node -v
-    ```
+## 🛠️ Tech Stack
 
-2. In the project directory, install dependencies:
+<div align="center">
 
-    ```bash
-    npm install
-    ```
+### Backend
+![.NET](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-3. Start the development server:
+### Frontend
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
-    ```bash
-    npm start
-    ```
+### Bases de Datos
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+### Enterprise & Herramientas
+![Odoo](https://img.shields.io/badge/Odoo-714B67?style=for-the-badge&logo=odoo&logoColor=white)
+![Keycloak](https://img.shields.io/badge/Keycloak-4D4D4D?style=for-the-badge&logo=keycloak&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+</div>
 
-The page will reload if you make edits, and you will see any lint errors in the console.
+---
 
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
+## 💼 Experiencia
 
-## Deployment
+> ✏️ **Nota:** completa cada bloque con tus datos reales (empresa, cargo, fechas y logros medibles). Dejé la estructura y el estilo de redacción lista para que solo rellenes el contenido.
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+### 🏢 [Nombre de la Empresa] — *[Cargo]*
+`[Mes Año] – [Mes Año]`
 
-1. **Set Up GitHub Repository**
+- 🚀 Diseñé y desarrollé APIs RESTful en **[ASP.NET Core / FastAPI / Node.js]** que soportaron **[X usuarios / X requests diarios]**
+- 🔗 Integré el sistema con **[ERP/Odoo/POS]**, reduciendo el tiempo de **[proceso]** en un **[X%]**
+- 📊 Construí dashboards en **Angular** para visualizar **[métricas de negocio]**, usados por **[equipo/departamento]**
+- 🔐 Implementé autenticación y control de acceso con **Keycloak**, mejorando la seguridad de **[X módulos]**
 
-    Create a new repository on GitHub for your portfolio app.
+### 🏢 [Nombre de la Empresa] — *[Cargo]*
+`[Mes Año] – [Mes Año]`
 
-2. **Configure `package.json`**
+- 🛠️ Lideré la migración de **[sistema legacy]** a una arquitectura de microservicios
+- 📦 Optimicé queries en **SQL Server / PostgreSQL**, reduciendo tiempos de respuesta en **[X%]**
+- 🤝 Colaboré con equipos multidisciplinarios en un entorno remoto ágil (Scrum/Kanban)
 
-    Edit the following properties in your `package.json` file:
+---
 
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
+## 🚀 Proyectos Destacados
 
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
+> ✏️ **Nota:** agrega una imagen/GIF del proyecto (`![preview](url)`) y el link al repo cuando lo tengas listo.
 
-3. **Deploy to GitHub Pages**
+### 📦 CuadreEnv
+**Stack:** `ASP.NET Core` `PostgreSQL` `Angular`
 
-    Run the following command to deploy your app:
+Sistema de **[breve descripción — ej: conciliación/cuadre de caja o inventario]** enfocado en automatizar procesos manuales y reducir errores operativos.
 
-    ```bash
-    npm run deploy
-    ```
+- ✅ [Logro/funcionalidad clave 1]
+- ✅ [Logro/funcionalidad clave 2]
+- ✅ [Resultado medible, ej: "redujo tiempo de cuadre en X%"]
 
-4. **Access Your Deployed App**
+[`🔗 Ver repositorio`](#) · [`🌐 Demo`](#)
 
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+---
+
+### ⚙️ API de Integración Empresarial
+**Stack:** `FastAPI` `Node.js` `Odoo`
+
+API diseñada para **[conectar sistema X con Odoo/ERP]**, exponiendo endpoints seguros y documentados para consumo de terceros.
+
+- ✅ Documentación con Swagger/OpenAPI
+- ✅ Autenticación con Keycloak
+- ✅ [Resultado medible]
+
+[`🔗 Ver repositorio`](#)
+
+---
+
+### 📊 Dashboard Administrativo
+**Stack:** `Angular` `Supabase` `Prisma`
+
+Panel de control en tiempo real para **[monitoreo de ventas / inventario / KPIs]**, consumido por **[usuarios finales]**.
+
+- ✅ Visualización de datos en tiempo real
+- ✅ [Funcionalidad clave]
+
+[`🔗 Ver repositorio`](#)
+
+---
+
+## 📫 Contacto
+
+<div align="center">
+
+¿Buscas un backend developer para tu equipo remoto? **Hablemos.**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](#)
+
+</div>
+
+<div align="center">
+<sub>💡 Construido con backend sólido, café ☕ y atención al detalle.</sub>
+</div>
