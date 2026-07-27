@@ -24,7 +24,7 @@ function Main() {
             </a>
           </div>
           <h1>Eliezer Peña</h1>
-          <p>Full Stack Engineer</p>
+          <p>Full Stack Developer</p>
           <div className="mobile_social_icons">
             <a
               href="https://github.com/Eliezeruni-env"
