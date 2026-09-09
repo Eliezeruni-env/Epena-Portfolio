@@ -1,74 +1,305 @@
-import React from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
-import mock04 from '../assets/images/mock04.png';
-import mock05 from '../assets/images/mock05.png';
-import mock06 from '../assets/images/mock06.png';
-import mock07 from '../assets/images/mock07.png';
-import mock08 from '../assets/images/mock08.png';
-import mock09 from '../assets/images/mock09.png';
-import mock10 from '../assets/images/mock10.png';
-import '../assets/styles/Project.scss';
+import React, { useState } from "react";
+import Chip from "@mui/material/Chip";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import ScienceIcon from "@mui/icons-material/Science";
+import CodeIcon from "@mui/icons-material/Code";
+import StorageIcon from "@mui/icons-material/Storage";
+import HubIcon from "@mui/icons-material/Hub";
+
+import { useLanguage } from "../context/LanguageContext";
+import {
+  projectTranslations,
+  projectsDataI18n,
+  ProjectItemI18n,
+} from "../translations/content";
+import "../assets/styles/Project.scss";
 
 function Project() {
-    return(
+  const { lang } = useLanguage();
+  const t = projectTranslations[lang];
+
+  const [projectType, setProjectType] = useState<"work" | "personal">("work");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [selectedProject, setSelectedProject] = useState<ProjectItemI18n | null>(null);
+
+  const filteredProjects = projectsDataI18n
+    .filter((p) => p.projectType === projectType)
+    .filter((p) => {
+      if (activeFilter === "all") return true;
+      if (activeFilter === "precisa") return p.id.includes("precisa");
+      if (activeFilter === "nurbansoft") return p.id.includes("nurbansoft");
+      if (activeFilter === "detp") return p.id.includes("detp");
+      if (activeFilter === "cuadreenv") return p.id.includes("cuadreenv");
+      if (activeFilter === "filmradar") return p.id.includes("filmradar");
+      if (activeFilter === "games-world") return p.id.includes("games-world");
+      if (activeFilter === "mlb-stats") return p.id.includes("mlb-stats");
+      if (activeFilter === "tenantflow") return p.id.includes("tenantflow");
+      return p.category === activeFilter;
+    });
+
+  const handleOpenDetail = (project: ProjectItemI18n) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedProject(null);
+  };
+
+  return (
     <div className="projects-container" id="projects">
-        <h1>Personal Projects</h1>
-        <div className="projects-grid">
-            <div className="project">
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><h2>Filmate AI</h2></a>
-                <p>Developed movie finder app with semantic search and sentiment analysis using OpenAI GPT-3.5 Turbo, Qdrant, React, and Flask.</p>
+      <div className="projects-header-wrapper">
+        <span className="section-subtitle">{t.subtitle}</span>
+        <h1>{t.heading}</h1>
+        <p className="section-description">{t.description}</p>
+
+        {/* Master Project Type Selector */}
+        <div className="project-type-selector">
+          <button
+            className={`type-btn ${projectType === "work" ? "active" : ""}`}
+            onClick={() => {
+              setProjectType("work");
+              setActiveFilter("all");
+            }}
+          >
+            <BusinessCenterIcon />
+            <div>
+              <span className="btn-main-title">{t.workTabMain}</span>
+              <span className="btn-subtitle">{t.workTabSub}</span>
             </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
+          </button>
+
+          <button
+            className={`type-btn ${projectType === "personal" ? "active" : ""}`}
+            onClick={() => {
+              setProjectType("personal");
+              setActiveFilter("all");
+            }}
+          >
+            <ScienceIcon />
+            <div>
+              <span className="btn-main-title">{t.personalTabMain}</span>
+              <span className="btn-subtitle">{t.personalTabSub}</span>
             </div>
-            <div className="project">
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
-            </div>
-            <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
-            </div>
-            <div className="project">
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><img src={mock03} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><h2>Programs of Study</h2></a>
-                <p>Designed and developed a custom component for a CMS-based platform (e.g., 'Brightspot') using Java, Handlebars, and LESS. University students can find their majors of interest through this module.</p>
-            </div>
-            <div className="project">
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><img src={mock02} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><h2>Transfer Evaluation Matrix</h2></a>
-                <p>Created an interactive CSV table generator with Java, Handlebars, and LESS. This project helps transfer students to quickly identify eligible credits.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><img src={mock01} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><h2>Submeowrine</h2></a>
-                <p>Developed and released an Android mobile application using Java and Android Studio that runs a 2D shooting game.</p>
-            </div>
+          </button>
         </div>
+
+        {/* Category Filter Tabs */}
+        <div className="project-filter-tabs">
+          <button
+            className={`filter-tab ${activeFilter === "all" ? "active" : ""}`}
+            onClick={() => setActiveFilter("all")}
+          >
+            <HubIcon fontSize="small" /> {t.filterAll} ({projectType === "work" ? t.workTabMain : t.personalTabMain})
+          </button>
+          {projectType === "work" ? (
+            <>
+              <button
+                className={`filter-tab ${activeFilter === "precisa" ? "active" : ""}`}
+                onClick={() => setActiveFilter("precisa")}
+              >
+                <BusinessCenterIcon fontSize="small" /> {t.filterPrecisa}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "nurbansoft" ? "active" : ""}`}
+                onClick={() => setActiveFilter("nurbansoft")}
+              >
+                <StorageIcon fontSize="small" /> {t.filterNurbansoft}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "detp" ? "active" : ""}`}
+                onClick={() => setActiveFilter("detp")}
+              >
+                <CodeIcon fontSize="small" /> {t.filterDetp}
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className={`filter-tab ${activeFilter === "cuadreenv" ? "active" : ""}`}
+                onClick={() => setActiveFilter("cuadreenv")}
+              >
+                <StorageIcon fontSize="small" /> {t.filterCuadreEnv}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "filmradar" ? "active" : ""}`}
+                onClick={() => setActiveFilter("filmradar")}
+              >
+                <CodeIcon fontSize="small" /> {t.filterFilmRadar}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "games-world" ? "active" : ""}`}
+                onClick={() => setActiveFilter("games-world")}
+              >
+                <HubIcon fontSize="small" /> {t.filterGamesWorld}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "mlb-stats" ? "active" : ""}`}
+                onClick={() => setActiveFilter("mlb-stats")}
+              >
+                <CodeIcon fontSize="small" /> {t.filterMlbStats}
+              </button>
+              <button
+                className={`filter-tab ${activeFilter === "tenantflow" ? "active" : ""}`}
+                onClick={() => setActiveFilter("tenantflow")}
+              >
+                <BusinessCenterIcon fontSize="small" /> {t.filterTenantFlow}
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Projects Grid */}
+      <div className="projects-grid">
+        {filteredProjects.map((project) => (
+          <div className="project-card" key={project.id}>
+            <div
+              className="project-image-wrapper"
+              onClick={() => handleOpenDetail(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.title[lang]}
+                className="project-thumb zoom"
+              />
+              <div className="image-overlay">
+                <span className="view-detail-btn">{t.viewDetailBtn}</span>
+              </div>
+              <div className="badge-category">{project.categoryLabel[lang]}</div>
+            </div>
+
+            <div className="project-card-content">
+              <div className="project-tags">
+                {project.tags.slice(0, 4).map((tag, idx) => (
+                  <Chip key={idx} label={tag} size="small" className="tag-chip" />
+                ))}
+                {project.tags.length > 4 && (
+                  <Chip
+                    label={`+${project.tags.length - 4}`}
+                    size="small"
+                    className="tag-chip-more"
+                  />
+                )}
+              </div>
+
+              <h2 onClick={() => handleOpenDetail(project)} className="project-title">
+                {project.title[lang]}
+              </h2>
+              <p className="project-desc">{project.shortDesc[lang]}</p>
+
+              <div className="project-card-footer">
+                <button
+                  className="detail-action-btn"
+                  onClick={() => handleOpenDetail(project)}
+                >
+                  {t.viewDetailBtn}
+                </button>
+                <span className="role-tag">{project.role[lang]}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Detailed Technical Modal */}
+      <Dialog
+        open={Boolean(selectedProject)}
+        onClose={handleCloseDetail}
+        maxWidth="md"
+        fullWidth
+        className="project-dialog-modal"
+      >
+        {selectedProject && (
+          <>
+            <DialogTitle className="dialog-title-bar">
+              <div>
+                <span className="dialog-subtitle">{selectedProject.categoryLabel[lang]}</span>
+                <h3>{selectedProject.title[lang]}</h3>
+              </div>
+              <IconButton
+                aria-label="close"
+                onClick={handleCloseDetail}
+                className="dialog-close-btn"
+              >
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+
+            <DialogContent dividers className="dialog-body-content">
+              <div className="dialog-hero-image">
+                <img src={selectedProject.image} alt={selectedProject.title[lang]} />
+              </div>
+
+              <div className="dialog-section">
+                <h4>{t.modalOverview}</h4>
+                <p>{selectedProject.overview[lang]}</p>
+              </div>
+
+              {/* Technical Specifications Grid */}
+              <div className="dialog-specs-grid">
+                {selectedProject.technicalSpecs.map((spec, i) => (
+                  <div key={i} className="spec-item">
+                    <span className="spec-label">{spec.label[lang]}</span>
+                    <span className="spec-value">{spec.value[lang]}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Architecture Highlights */}
+              <div className="dialog-section">
+                <h4>{t.modalArch}</h4>
+                <ul className="dialog-bullet-list">
+                  {selectedProject.architectureHighlights[lang].map((item, idx) => (
+                    <li key={idx}>
+                      <CheckCircleOutlineIcon className="bullet-icon" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Key Features */}
+              <div className="dialog-section">
+                <h4>{t.modalFeatures}</h4>
+                <ul className="dialog-bullet-list">
+                  {selectedProject.keyFeatures[lang].map((item, idx) => (
+                    <li key={idx}>
+                      <CheckCircleOutlineIcon className="bullet-icon" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Tech Stack Chips */}
+              <div className="dialog-section">
+                <h4>{t.modalTech}</h4>
+                <div className="dialog-chips-flex">
+                  {selectedProject.tags.map((tag, idx) => (
+                    <Chip key={idx} label={tag} className="tech-badge" />
+                  ))}
+                </div>
+              </div>
+            </DialogContent>
+
+            <DialogActions className="dialog-footer-actions">
+              <Button onClick={handleCloseDetail} className="close-action-button">
+                {t.modalClose}
+              </Button>
+            </DialogActions>
+          </>
+        )}
+      </Dialog>
     </div>
-    );
+  );
 }
 
 export default Project;

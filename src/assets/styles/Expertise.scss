@@ -1,85 +1,199 @@
 .skills-container {
-    padding: 5% 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  scroll-margin-top: 80px;
 
-    svg {
-        color: white;
-    }
-}
-  
-.skills-container .skills-grid {
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0 0 36px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #b8c1ec 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-}
-  
-.skills-container .skills-grid .skill {
-    align-items: center;
-    text-align: left;
-}
-  
-.chip {
-    color: rgb(39, 40, 34) !important;
-    background-color: white !important;
-    font-size: 0.8rem !important;
-    height: 25px !important;
-  
-    span {
-        font-family: 'Courier Prime', monospace;
-        color: rgb(39, 40, 34);
-    }
-  
-    svg {
-        height: 15px !important;
-    }
-}
+    grid-gap: 40px;
 
-.flex-chips {
-    line-height: 2;
-    margin: 0.5;
+    .skill {
+      background: rgba(22, 27, 34, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
-    .chip-title {
-        color: white;
-        padding-right: 10px;
-    }
-}
+      &:hover {
+        transform: translateY(-6px);
+        border-color: rgba(157, 78, 221, 0.5);
+        box-shadow: 0 20px 40px rgba(123, 44, 191, 0.2);
 
-.flex-chips .MuiChip-root {
-    margin-right: 0.5em;
-}
-
-.flex-chips .MuiChip-outlined {
-    background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
-.flex-chips .MuiChip-outlined span {
-    color: rgb(39, 40, 34);
-}
-
-@media screen {
-    @media (max-width: 768px) {
-        .skills-container {
-            display: block;
-            padding-left: 5%;
-            padding-right: 5%;
+        .skill-icon-wrapper .primary-icon {
+          transform: scale(1.1);
+          color: #c77dff;
         }
-    
-        .skills-container .skills-grid {
-            display: initial;
+      }
+
+      .skill-icon-wrapper {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 20px;
+
+        .primary-icon {
+          color: #9d4edd;
+          transition: all 0.3s ease;
         }
-        
-        .skills-container .skills-grid .skill {
-            padding-bottom: 5%;
+
+        .secondary-icon {
+          color: #64748b;
         }
+      }
+
+      h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 14px 0;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 0.98rem;
+        color: #94a3b8;
+        line-height: 1.65;
+        margin-bottom: 24px;
+        flex-grow: 1;
+      }
+
+      .flex-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+
+        .chip-title {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #cbd5e1;
+          width: 100%;
+          margin-bottom: 4px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .chip {
+          background: rgba(157, 78, 221, 0.15) !important;
+          color: #e2e8f0 !important;
+          border: 1px solid rgba(157, 78, 221, 0.3) !important;
+          font-size: 0.8rem !important;
+          height: 26px !important;
+          font-weight: 500;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: rgba(157, 78, 221, 0.3) !important;
+            border-color: #c77dff !important;
+          }
+
+          span {
+            font-family: inherit;
+            color: #f1f5f9;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Light Mode */
+.light-mode {
+  .skills-container {
+    h1 {
+      background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    @media (max-width: 567px) {
-        .skills {
-            font-size: 12px;
+    .skills-grid {
+      .skill {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+        &:hover {
+          border-color: #7b2cbf;
+          box-shadow: 0 15px 35px rgba(123, 44, 191, 0.15);
+
+          .skill-icon-wrapper .primary-icon {
+            color: #7b2cbf;
+          }
         }
+
+        .skill-icon-wrapper {
+          .primary-icon {
+            color: #7b2cbf;
+          }
+          .secondary-icon {
+            color: #94a3b8;
+          }
+        }
+
+        h3 {
+          color: #0f172a;
+        }
+
+        p {
+          color: #475569;
+        }
+
+        .flex-chips {
+          .chip-title {
+            color: #334155;
+          }
+
+          .chip {
+            background: rgba(123, 44, 191, 0.08) !important;
+            border-color: rgba(123, 44, 191, 0.25) !important;
+            color: #581c87 !important;
+
+            span {
+              color: #581c87;
+            }
+
+            &:hover {
+              background: rgba(123, 44, 191, 0.18) !important;
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .skills-container {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      grid-gap: 28px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-container {
+    padding: 8% 5%;
+
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
 }

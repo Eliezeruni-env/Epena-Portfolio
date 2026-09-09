@@ -1,91 +1,118 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
-import Chip from '@mui/material/Chip';
-import '../assets/styles/Expertise.scss';
+import "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngular,
+  faReact,
+  faMicrosoft,
+  faDocker,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faLayerGroup,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
+import Chip from "@mui/material/Chip";
+import { useLanguage } from "../context/LanguageContext";
+import { expertiseTranslations } from "../translations/content";
+import "../assets/styles/Expertise.scss";
 
-const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+const labelsFrontend = [
+  "Angular 21",
+  "React 18",
+  "TypeScript",
+  "JavaScript",
+  "RxJS",
+  "CoreUI 5",
+  "Vite",
+  "HTML5 / SCSS",
+  "Chart.js",
+  "Responsive UI",
 ];
 
-const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+const labelsBackend = [
+  "C# / .NET 8",
+  "Onion Architecture",
+  "ASP.NET Core",
+  "EF Core 9",
+  "SQL Server",
+  "Node.js / Express",
+  "RESTful APIs",
+  "Swagger / OpenAPI",
+  "Idempotency",
 ];
 
-const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+const labelsDevOpsSecurity = [
+  "JWT & RBAC",
+  "Multi-Tenancy",
+  "Financial Auditing",
+  "Docker",
+  "Git / GitHub Actions",
+  "Serilog",
+  "Postman",
+  "Clean Code",
+  "CI / CD",
 ];
 
 function Expertise() {
-    return (
+  const { lang } = useLanguage();
+  const t = expertiseTranslations[lang];
+
+  return (
     <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+      <div className="skills-container">
+        <h1>{t.heading}</h1>
+        <div className="skills-grid">
+          {/* Card 1: Frontend & POS Engineering */}
+          <div className="skill">
+            <div className="skill-icon-wrapper">
+              <FontAwesomeIcon icon={faAngular as any} size="3x" className="primary-icon" />
+              <FontAwesomeIcon icon={faReact as any} size="2x" className="secondary-icon" />
             </div>
+            <h3>{t.card1Title}</h3>
+            <p>{t.card1Desc}</p>
+            <div className="flex-chips">
+              <span className="chip-title">{t.techStack}</span>
+              {labelsFrontend.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
+            </div>
+          </div>
+
+          {/* Card 2: Backend & Clean Architecture */}
+          <div className="skill">
+            <div className="skill-icon-wrapper">
+              <FontAwesomeIcon icon={faLayerGroup as any} size="3x" className="primary-icon" />
+              <FontAwesomeIcon icon={faMicrosoft as any} size="2x" className="secondary-icon" />
+            </div>
+            <h3>{t.card2Title}</h3>
+            <p>{t.card2Desc}</p>
+            <div className="flex-chips">
+              <span className="chip-title">{t.techStack}</span>
+              {labelsBackend.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
+            </div>
+          </div>
+
+          {/* Card 3: Security & Enterprise Systems */}
+          <div className="skill">
+            <div className="skill-icon-wrapper">
+              <FontAwesomeIcon icon={faShieldHalved as any} size="3x" className="primary-icon" />
+              <FontAwesomeIcon icon={faDocker as any} size="2x" className="secondary-icon" />
+            </div>
+            <h3>{t.card3Title}</h3>
+            <p>{t.card3Desc}</p>
+            <div className="flex-chips">
+              <span className="chip-title">{t.techStack}</span>
+              {labelsDevOpsSecurity.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    );
+  );
 }
 
 export default Expertise;

@@ -1,38 +1,257 @@
-.vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+.items-container {
+  padding: 5% 10%;
+  text-align: left;
+  scroll-margin-top: 80px;
+
+  .timeline-header-wrapper {
+    margin-bottom: 36px;
+
+    .section-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #9d4edd;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin: 0 0 16px 0;
+      background: linear-gradient(135deg, #ffffff 0%, #b8c1ec 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-description {
+      font-size: 1.15rem;
+      color: #a0aec0;
+      max-width: 850px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .timeline-filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .t-filter-btn {
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+          background: rgba(157, 78, 221, 0.15);
+          border-color: #9d4edd;
+          color: #ffffff;
+        }
+
+        &.active {
+          background: linear-gradient(135deg, #7b2cbf 0%, #5000ca 100%);
+          border-color: #9d4edd;
+          color: #ffffff;
+          box-shadow: 0 4px 15px rgba(123, 44, 191, 0.35);
+        }
+      }
+    }
+  }
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
+.vertical-timeline {
+  &::before {
+    background: rgba(157, 78, 221, 0.35) !important;
+  }
 }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
+.vertical-timeline-element {
+  margin: 2em 0 !important;
 
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
+  .vertical-timeline-element-content {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
 
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
+    .timeline-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
 
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
+      .role-type-badge {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 12px;
 
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
+        &.tech {
+          background: rgba(157, 78, 221, 0.2);
+          color: #c77dff;
+          border: 1px solid rgba(157, 78, 221, 0.4);
+        }
+
+        &.other {
+          background: rgba(16, 185, 129, 0.2);
+          color: #6ee7b7;
+          border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+      }
+
+      .location-text {
+        font-size: 0.8rem;
+        color: #94a3b8;
+      }
+    }
+
+    h3.vertical-timeline-element-title {
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      margin: 0 0 6px 0 !important;
+    }
+
+    h4.vertical-timeline-element-subtitle {
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      color: #c77dff !important;
+      margin: 0 0 14px 0 !important;
+    }
+
+    p.timeline-desc {
+      font-size: 0.95rem !important;
+      color: #cbd5e1 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 14px !important;
+    }
+
+    .timeline-bullets {
+      margin: 0 0 16px 0;
+      padding-left: 18px;
+
+      li {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+    }
+
+    .timeline-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      .t-skill-chip {
+        font-size: 0.75rem;
+        height: 24px;
+
+        &.tech {
+          background: rgba(157, 78, 221, 0.15);
+          color: #e9d5ff;
+          border: 1px solid rgba(157, 78, 221, 0.3);
+        }
+
+        &.other {
+          background: rgba(16, 185, 129, 0.15);
+          color: #a7f3d0;
+          border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+      }
+    }
+  }
+
+  .vertical-timeline-element-date {
+    color: #c77dff !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+  }
 }
 
 .svg-inline--fa {
-    color: white;
+  color: #ffffff;
 }
 
-@media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+/* Light Mode Overrides */
+.light-mode {
+  .items-container {
+    .timeline-header-wrapper {
+      h1 {
+        background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .section-description {
+        color: #64748b;
+      }
+
+      .timeline-filter-buttons .t-filter-btn {
+        border-color: rgba(0, 0, 0, 0.12);
+        background: rgba(0, 0, 0, 0.04);
+        color: #334155;
+
+        &:hover {
+          background: rgba(123, 44, 191, 0.1);
+          border-color: #7b2cbf;
+          color: #7b2cbf;
+        }
+
+        &.active {
+          background: linear-gradient(135deg, #7b2cbf 0%, #5000ca 100%);
+          color: #ffffff;
+        }
+      }
     }
+  }
+
+  .vertical-timeline-element {
+    .vertical-timeline-element-content {
+      background: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+
+      h3.vertical-timeline-element-title {
+        color: #0f172a !important;
+      }
+
+      h4.vertical-timeline-element-subtitle {
+        color: #6b21a8 !important;
+      }
+
+      p.timeline-desc {
+        color: #334155 !important;
+      }
+
+      .timeline-bullets li {
+        color: #475569 !important;
+      }
+    }
+
+    .vertical-timeline-element-content-arrow {
+      border-right-color: #ffffff !important;
+    }
+
+    .vertical-timeline-element-date {
+      color: #6b21a8 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .items-container {
+    padding: 8% 5%;
+
+    .timeline-header-wrapper h1 {
+      font-size: 2.2rem;
+    }
+  }
 }
