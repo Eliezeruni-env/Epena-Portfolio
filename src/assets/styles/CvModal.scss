@@ -327,3 +327,25 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .cv-modal-dialog {
+    .cv-modal-body {
+      .cv-header {
+        .cv-contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .cv-section {
+        .cv-entry {
+          .entry-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+          }
+        }
+      }
+    }
+  }
+}

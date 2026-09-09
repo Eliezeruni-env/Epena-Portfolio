@@ -115,6 +115,10 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
         margin-top: 24px;
+        
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
 
         .highlight-box {
           background: rgba(0, 0, 0, 0.3);
@@ -238,6 +242,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
       margin-top: 20px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
 
       .uni-pill {
         display: flex;
@@ -559,7 +567,7 @@
       }
 
       .cv-banner-cta {
-        background: linear-gradient(135deg, rgba(123, 44, 191, 0.08) 0%, rgba(80, 0, 202, 0.04) 100%);
+        background: linear-gradient(135deg, rgba(123, 44, 191, 0.08), rgba(80, 0, 202, 0.04));
         border-color: rgba(123, 44, 191, 0.25);
 
         .cta-text {
@@ -574,34 +582,34 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 992px) {
-    .about-container {
-      .about-main-grid {
+@media screen and (max-width: 992px) {
+  .about-container {
+    .about-main-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .out-of-area-card {
+      .out-area-grid {
         grid-template-columns: 1fr;
       }
 
-      .out-of-area-card {
-        .out-area-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .cv-banner-cta {
-          flex-direction: column;
-          text-align: center;
-          gap: 16px;
-        }
+      .cv-banner-cta {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
       }
     }
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .about-container {
-      padding: 8% 5%;
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 8% 5%;
 
-      h1 {
-        font-size: 2.2rem;
-      }
+    h1 {
+      font-size: 2.2rem;
     }
   }
 }

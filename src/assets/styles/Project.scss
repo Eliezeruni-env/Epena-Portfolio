@@ -688,3 +688,13 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .projects-container {
+    .projects-header-wrapper {
+      .project-type-selector {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
