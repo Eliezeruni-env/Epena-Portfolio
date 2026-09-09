@@ -70,7 +70,6 @@ function Timeline() {
               contentArrowStyle={{
                 borderRight: item.type === "tech" ? "7px solid #161b22" : "7px solid #0f231c",
               }}
-              date={item.date[lang]}
               iconStyle={{ background: item.iconBg, color: "#ffffff" }}
               icon={<FontAwesomeIcon icon={item.icon as any} />}
             >

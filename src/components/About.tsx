@@ -3,11 +3,9 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import PersonIcon from "@mui/icons-material/Person";
 import DescriptionIcon from "@mui/icons-material/Description";
-import PsychologyIcon from "@mui/icons-material/Psychology";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import TranslateIcon from "@mui/icons-material/Translate";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import StorageIcon from "@mui/icons-material/Storage";
 import Button from "@mui/material/Button";
 import CvModal from "./CvModal";
 import { useLanguage } from "../context/LanguageContext";
@@ -154,19 +152,6 @@ export default function About() {
                 <p>{t.langEnglishDesc}</p>
               </div>
             </div>
-
-            <div className="lang-item-box sql-box">
-              <div className="lang-flag sql-flag">
-                <StorageIcon className="sql-icon" />
-              </div>
-              <div className="lang-info">
-                <div className="lang-header-line">
-                  <h4>{t.langSqlTitle}</h4>
-                  <span className="lang-badge-level sql-badge">{t.langSqlLevel}</span>
-                </div>
-                <p>{t.langSqlDesc}</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -190,14 +175,6 @@ export default function About() {
                 <h4>{t.pillarCallCenterTitle}</h4>
               </div>
               <p>{t.pillarCallCenterDesc}</p>
-            </div>
-
-            <div className="skill-pillar">
-              <div className="pillar-header">
-                <PsychologyIcon className="pillar-icon" />
-                <h4>{t.pillar1Title}</h4>
-              </div>
-              <p>{t.pillar1Desc}</p>
             </div>
 
             <div className="skill-pillar">

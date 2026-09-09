@@ -23,16 +23,18 @@ export default function FadeIn(props: PropsWithChildren<Props>) {
   const WrapperTag = props.wrapperTag || "div";
   const ChildTag = props.childTag || "div";
   const visible = typeof props.visible === "undefined" ? true : props.visible;
+  const childCount = React.Children.count(props.children);
+  const onComplete = props.onComplete;
 
   useEffect(() => {
-    let count = React.Children.count(props.children);
+    let count = childCount;
     if (!visible) {
       count = 0;
     }
 
     if (count === maxIsVisible) {
       const timeout = setTimeout(() => {
-        if (props.onComplete) props.onComplete();
+        if (onComplete) onComplete();
       }, transitionDuration);
       return () => clearTimeout(timeout);
     }
@@ -42,8 +44,9 @@ export default function FadeIn(props: PropsWithChildren<Props>) {
       setMaxIsVisible(maxIsVisible + increment);
     }, delay);
     return () => clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    React.Children.count(props.children),
+    childCount,
     delay,
     maxIsVisible,
     visible,

@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import { useLanguage } from "../context/LanguageContext";
 import { footerTranslations } from "../translations/content";
 import "../assets/styles/Footer.scss";
@@ -13,12 +14,18 @@ function Footer() {
     <footer>
       <div>
         <a
-          href="https://github.com/Eliezeruni-env"
+          href="https://github.com/mrZabala"
           target="_blank"
           rel="noreferrer"
           title="GitHub"
         >
           <GitHubIcon />
+        </a>
+        <a
+          href="mailto:peliezer51@gmail.com"
+          title="Email (peliezer51@gmail.com)"
+        >
+          <EmailIcon />
         </a>
         <a
           href="https://www.linkedin.com/in/eliezer-alberto-peña-zabala-ab4aa82b1"

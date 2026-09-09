@@ -73,10 +73,21 @@ export default function CvModal({ open, onClose }: CvModalProps) {
               <LocationOnIcon fontSize="small" /> Santo Domingo, República Dominicana
             </div>
             <div className="contact-item">
-              <EmailIcon fontSize="small" /> eliezer.pena@precisa.com.do
+              <EmailIcon fontSize="small" />{" "}
+              <a href="mailto:peliezer51@gmail.com" style={{ color: "inherit", textDecoration: "none" }}>
+                peliezer51@gmail.com
+              </a>
             </div>
             <div className="contact-item">
-              <GitHubIcon fontSize="small" /> github.com/Eliezeruni-env
+              <GitHubIcon fontSize="small" />{" "}
+              <a
+                href="https://github.com/mrZabala"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                github.com/mrZabala
+              </a>
             </div>
             <div className="contact-item">
               <LinkedInIcon fontSize="small" /> linkedin.com/in/eliezer-alberto-peña-zabala
@@ -100,7 +111,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
           <div className="cv-entry">
             <div className="entry-header">
               <h4>{t.eduDegree}</h4>
-              <span className="entry-date">{t.eduStatus}</span>
             </div>
             <div className="entry-institution">
               <strong>{t.eduInst}</strong>
@@ -111,7 +121,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
           <div className="cv-entry" style={{ marginTop: "14px" }}>
             <div className="entry-header">
               <h4>{t.btechTitle}</h4>
-              <span className="entry-date">Ago 2023 – May 2025</span>
             </div>
             <div className="entry-institution">
               <strong>{t.btechInst}</strong>
@@ -122,7 +131,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
           <div className="cv-entry" style={{ marginTop: "14px" }}>
             <div className="entry-header">
               <h4>{t.mescytTitle}</h4>
-              <span className="entry-date">B1 / C1</span>
             </div>
             <div className="entry-institution">
               <strong>{t.mescytInst}</strong>
@@ -137,11 +145,30 @@ export default function CvModal({ open, onClose }: CvModalProps) {
             <WorkIcon fontSize="small" className="section-icon" /> {t.techExpTitle}
           </h3>
 
+          {/* Precisa Group (Current / Primero) */}
+          <div className="cv-entry">
+            <div className="entry-header">
+              <h4>Full Stack Developer</h4>
+            </div>
+            <div className="entry-institution">Precisa Group · Collecta Web, Portal Gerencial & HRIS</div>
+            <ul className="entry-bullets">
+              <li>
+                {lang === "es"
+                  ? "Portal Web Gerencial: Dashboard de gestión y métricas con monitoreo en vivo de agentes de call center (llamadas, presencia, tarjetas vendidas) mediante ETL desde sistema central con Supabase y PostgreSQL."
+                  : "Executive Management Portal: Operational KPI dashboard tracking call center agents (call volume, presence, card sales) via automated ETL on Supabase and PostgreSQL."}
+              </li>
+              <li>
+                {lang === "es"
+                  ? "Sistema de Recursos Humanos (HRIS) y Collecta Web: Plataforma integral de personal y web corporativa con API en Express.js para gestión de correos."
+                  : "Human Resources (HRIS) & Collecta Web: Enterprise workforce platform and corporate React web application backed by Express.js email API."}
+              </li>
+            </ul>
+          </div>
+
           {/* Nurbansoft */}
           <div className="cv-entry">
             <div className="entry-header">
               <h4>Junior Software Developer</h4>
-              <span className="entry-date">Jun 2023 - May 2025 · 2 yrs</span>
             </div>
             <div className="entry-institution">Nurbansoft · Full-time</div>
             <ul className="entry-bullets">
@@ -158,32 +185,10 @@ export default function CvModal({ open, onClose }: CvModalProps) {
             </ul>
           </div>
 
-          {/* Precisa Group */}
-          <div className="cv-entry">
-            <div className="entry-header">
-              <h4>Full Stack Developer</h4>
-              <span className="entry-date">2023 - Presente</span>
-            </div>
-            <div className="entry-institution">Precisa Group (Portal Gerencial, HRIS & Collecta Web)</div>
-            <ul className="entry-bullets">
-              <li>
-                {lang === "es"
-                  ? "Portal Web Gerencial: Dashboard de gestión y métricas con monitoreo en vivo de agentes de call center (llamadas, presencia, tarjetas vendidas) mediante ETL desde sistema central con Supabase y PostgreSQL."
-                  : "Executive Management Portal: Operational KPI dashboard tracking call center agents (call volume, presence, card sales) via automated ETL on Supabase and PostgreSQL."}
-              </li>
-              <li>
-                {lang === "es"
-                  ? "Sistema de Recursos Humanos (HRIS) y Collecta Web: Plataforma integral de personal y web corporativa con API en Express.js para gestión de correos."
-                  : "Human Resources (HRIS) & Collecta Web: Enterprise workforce platform and corporate React web application backed by Express.js email API."}
-              </li>
-            </ul>
-          </div>
-
           {/* DETP */}
           <div className="cv-entry">
             <div className="entry-header">
               <h4>Trainee Software Developer</h4>
-              <span className="entry-date">Ene 2023 - Jul 2023 · 7 mos</span>
             </div>
             <div className="entry-institution">Dirección de Educación Técnico Profesional (DETP) · Part-time</div>
             <ul className="entry-bullets">
@@ -199,7 +204,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
           <div className="cv-entry">
             <div className="entry-header">
               <h4>Proyectos Personales & Labs</h4>
-              <span className="entry-date">CuadreEnv · FilmRadar · Games World · MLB Stats · TenantFlow</span>
             </div>
             <div className="entry-institution">Innovación & Soluciones de Software</div>
             <ul className="entry-bullets">
@@ -229,7 +233,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
                   ? "Agente de Call Center — Gestión de Cobros"
                   : "Call Center Agent — Debt Collection & Recovery"}
               </h4>
-              <span className="entry-date">{lang === "es" ? "Experiencia Formativa" : "Formative Experience"}</span>
             </div>
             <div className="entry-institution">
               {lang === "es" ? "Servicios Financieros & Recuperación de Cartera" : "Financial Services & Account Recovery"}
@@ -247,32 +250,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
               </li>
             </ul>
           </div>
-
-          <div className="cv-entry">
-            <div className="entry-header">
-              <h4>
-                {lang === "es"
-                  ? "Supervisor de Operaciones & Arqueo de Caja"
-                  : "Operations & Cash Drawer Balancing Supervisor"}
-              </h4>
-              <span className="entry-date">{lang === "es" ? "Sector Comercial" : "Commercial Retail"}</span>
-            </div>
-            <div className="entry-institution">
-              {lang === "es" ? "Comercio Minorista & Mostrador" : "Retail Checkout & Front Desk"}
-            </div>
-            <ul className="entry-bullets">
-              <li>
-                {lang === "es"
-                  ? "Arqueos diarios de caja, conciliación física de efectivo, detección de discrepancias y servicio al cliente en mostrador."
-                  : "Daily physical cash reconciliations, drawer balancing, variance auditing, and front-desk customer service under pressure."}
-              </li>
-              <li>
-                {lang === "es"
-                  ? "Esta experiencia operativa fue la inspiración directa para las reglas de negocio de CuadreEnv."
-                  : "This operational background directly inspired the business rules and design of the CuadreEnv ecosystem."}
-              </li>
-            </ul>
-          </div>
         </section>
 
         {/* Languages */}
@@ -286,9 +263,6 @@ export default function CvModal({ open, onClose }: CvModalProps) {
             </div>
             <div className="skill-cat">
               <strong>{lang === "es" ? "Inglés:" : "English:"}</strong> {t.langEnglish}
-            </div>
-            <div className="skill-cat">
-              <strong>SQL Server / T-SQL:</strong> {t.langSql}
             </div>
           </div>
         </section>

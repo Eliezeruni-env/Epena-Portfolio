@@ -269,10 +269,10 @@
 
     .languages-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
 
-      @media (max-width: 900px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
       }
 
@@ -439,6 +439,7 @@
           color: #ffffff;
           margin: 0 0 6px 0;
         }
+
         p {
           font-size: 0.95rem;
           color: #d8b4fe;
@@ -491,6 +492,7 @@
 
     .card-content p {
       color: #475569;
+
       strong {
         color: #0f172a;
       }
@@ -521,63 +523,85 @@
       border-color: #e2e8f0;
       color: #334155;
     }
-  }
 
-  .out-of-area-card {
-    .out-area-grid .skill-pillar {
-      background: #f8fafc;
-      border-color: #e2e8f0;
+    .languages-card {
+      background: #ffffff;
+      border-color: rgba(56, 189, 248, 0.35);
 
-      .pillar-header h4 {
-        color: #0f172a;
-      }
-      p {
-        color: #475569;
-      }
-    }
+      .lang-item-box {
+        background: #f8fafc;
+        border-color: #e2e8f0;
 
-    .cv-banner-cta {
-      background: linear-gradient(135deg, rgba(123, 44, 191, 0.08) 0%, rgba(80, 0, 202, 0.04) 100%);
-      border-color: rgba(123, 44, 191, 0.25);
+        .lang-info {
+          .lang-header-line h4 {
+            color: #0f172a;
+          }
 
-      .cta-text {
-        h3 {
-          color: #0f172a;
-        }
-        p {
-          color: #6b21a8;
+          p {
+            color: #475569;
+          }
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .about-container {
-    .about-main-grid {
-      grid-template-columns: 1fr;
     }
 
     .out-of-area-card {
-      .out-area-grid {
-        grid-template-columns: 1fr;
+      .out-area-grid .skill-pillar {
+        background: #f8fafc;
+        border-color: #e2e8f0;
+
+        .pillar-header h4 {
+          color: #0f172a;
+        }
+
+        p {
+          color: #475569;
+        }
       }
 
       .cv-banner-cta {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
+        background: linear-gradient(135deg, rgba(123, 44, 191, 0.08) 0%, rgba(80, 0, 202, 0.04) 100%);
+        border-color: rgba(123, 44, 191, 0.25);
+
+        .cta-text {
+          h3 {
+            color: #0f172a;
+          }
+
+          p {
+            color: #6b21a8;
+          }
+        }
       }
     }
   }
-}
 
-@media screen and (max-width: 768px) {
-  .about-container {
-    padding: 8% 5%;
+  @media screen and (max-width: 992px) {
+    .about-container {
+      .about-main-grid {
+        grid-template-columns: 1fr;
+      }
 
-    h1 {
-      font-size: 2.2rem;
+      .out-of-area-card {
+        .out-area-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cv-banner-cta {
+          flex-direction: column;
+          text-align: center;
+          gap: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-container {
+      padding: 8% 5%;
+
+      h1 {
+        font-size: 2.2rem;
+      }
     }
   }
 }
