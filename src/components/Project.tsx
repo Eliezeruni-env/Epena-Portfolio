@@ -13,6 +13,7 @@ import ScienceIcon from "@mui/icons-material/Science";
 import CodeIcon from "@mui/icons-material/Code";
 import StorageIcon from "@mui/icons-material/Storage";
 import HubIcon from "@mui/icons-material/Hub";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 import { useLanguage } from "../context/LanguageContext";
 import {
@@ -42,6 +43,7 @@ function Project() {
       if (activeFilter === "games-world") return p.id.includes("games-world");
       if (activeFilter === "mlb-stats") return p.id.includes("mlb-stats");
       if (activeFilter === "tenantflow") return p.id.includes("tenantflow");
+      if (activeFilter === "franchelyzcm") return p.id.includes("franchelyzcm");
       return p.category === activeFilter;
     });
 
@@ -129,6 +131,12 @@ function Project() {
                 <StorageIcon fontSize="small" /> {t.filterCuadreEnv}
               </button>
               <button
+                className={`filter-tab ${activeFilter === "franchelyzcm" ? "active" : ""}`}
+                onClick={() => setActiveFilter("franchelyzcm")}
+              >
+                <CodeIcon fontSize="small" /> {t.filterFranchelyZcm}
+              </button>
+              <button
                 className={`filter-tab ${activeFilter === "filmradar" ? "active" : ""}`}
                 onClick={() => setActiveFilter("filmradar")}
               >
@@ -196,12 +204,26 @@ function Project() {
               <p className="project-desc">{project.shortDesc[lang]}</p>
 
               <div className="project-card-footer">
-                <button
-                  className="detail-action-btn"
-                  onClick={() => handleOpenDetail(project)}
-                >
-                  {t.viewDetailBtn}
-                </button>
+                <div className="card-action-group">
+                  <button
+                    className="detail-action-btn"
+                    onClick={() => handleOpenDetail(project)}
+                  >
+                    {t.viewDetailBtn}
+                  </button>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-live-btn"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <LaunchIcon fontSize="small" />
+                      <span>{t.visitSite}</span>
+                    </a>
+                  )}
+                </div>
                 <span className="role-tag">{project.role[lang]}</span>
               </div>
             </div>
@@ -224,13 +246,26 @@ function Project() {
                 <span className="dialog-subtitle">{selectedProject.categoryLabel[lang]}</span>
                 <h3>{selectedProject.title[lang]}</h3>
               </div>
-              <IconButton
-                aria-label="close"
-                onClick={handleCloseDetail}
-                className="dialog-close-btn"
-              >
-                <CloseIcon />
-              </IconButton>
+              <div className="dialog-header-actions">
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="dialog-live-link"
+                  >
+                    <LaunchIcon fontSize="small" />
+                    <span>{t.visitSite}</span>
+                  </a>
+                )}
+                <IconButton
+                  aria-label="close"
+                  onClick={handleCloseDetail}
+                  className="dialog-close-btn"
+                >
+                  <CloseIcon />
+                </IconButton>
+              </div>
             </DialogTitle>
 
             <DialogContent dividers className="dialog-body-content">
@@ -251,6 +286,20 @@ function Project() {
                     <span className="spec-value">{spec.value[lang]}</span>
                   </div>
                 ))}
+                {selectedProject.liveUrl && (
+                  <div className="spec-item spec-item-live">
+                    <span className="spec-label">{t.liveLinkField}</span>
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="spec-link"
+                    >
+                      <span>{selectedProject.liveUrl}</span>
+                      <LaunchIcon fontSize="small" />
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* Architecture Highlights */}
@@ -291,6 +340,18 @@ function Project() {
             </DialogContent>
 
             <DialogActions className="dialog-footer-actions">
+              {selectedProject.liveUrl && (
+                <Button
+                  component="a"
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="live-action-button"
+                  startIcon={<LaunchIcon />}
+                >
+                  {t.visitSiteBtn}
+                </Button>
+              )}
               <Button onClick={handleCloseDetail} className="close-action-button">
                 {t.modalClose}
               </Button>

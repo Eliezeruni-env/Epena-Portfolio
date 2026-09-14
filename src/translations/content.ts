@@ -8,6 +8,7 @@ import collectaWebImg from "../assets/images/collecta_web_app.jpg";
 import portalGerencialImg from "../assets/images/portal_gerencial_app.jpg";
 import hrisSystemImg from "../assets/images/hris_system_app.jpg";
 import detpPlatformImg from "../assets/images/detp_platform_app.jpg";
+import franchelyzcmImg from "../assets/images/franchelyzcm_app.jpg";
 
 import {
   faLayerGroup,
@@ -23,6 +24,7 @@ export interface ProjectItemI18n {
   image: string;
   tags: string[];
   repoPath: string;
+  liveUrl?: string;
   categoryLabel: { es: string; en: string };
   title: { es: string; en: string };
   shortDesc: { es: string; en: string };
@@ -241,12 +243,13 @@ export const projectTranslations = {
     workTabMain: "Proyectos de Trabajo Real",
     workTabSub: "Sistemas empresariales en producción (Precisa Group, Nurbansoft, DETP)",
     personalTabMain: "Proyectos Personales",
-    personalTabSub: "Ecosistema CuadreEnv, FilmRadar, Games World, MLB Stats & TenantFlow",
+    personalTabSub: "Ecosistema CuadreEnv, Franchely Zabala Web, FilmRadar, Games World, MLB Stats & TenantFlow",
     filterAll: "Todos",
     filterPrecisa: "Precisa Group",
     filterNurbansoft: "Nurbansoft (ERP / POS)",
     filterDetp: "DETP (Laravel / Vue)",
     filterCuadreEnv: "CuadreEnv Ecosystem",
+    filterFranchelyZcm: "Franchely Zabala Web",
     filterFilmRadar: "FilmRadar",
     filterGamesWorld: "Games World",
     filterMlbStats: "MLB Stats",
@@ -254,6 +257,9 @@ export const projectTranslations = {
     filterUiLabs: "Frontend & UI Labs",
     filterFullStack: "Full-Stack & Next.js",
     viewDetailBtn: "Explorar Ficha Técnica",
+    visitSite: "Ver Sitio Web",
+    visitSiteBtn: "Visitar Sitio Web en Vivo",
+    liveLinkField: "URL en Producción",
     modalOverview: "Descripción General",
     modalArch: "Aspectos Clave de Arquitectura",
     modalFeatures: "Módulos y Funcionalidades Principales",
@@ -267,12 +273,13 @@ export const projectTranslations = {
     workTabMain: "Real-World Projects",
     workTabSub: "Enterprise production platforms (Precisa Group, Nurbansoft, DETP)",
     personalTabMain: "Personal Projects",
-    personalTabSub: "CuadreEnv Ecosystem, FilmRadar, Games World, MLB Stats & TenantFlow",
+    personalTabSub: "CuadreEnv Ecosystem, Franchely Zabala Web, FilmRadar, Games World, MLB Stats & TenantFlow",
     filterAll: "All",
     filterPrecisa: "Precisa Group",
     filterNurbansoft: "Nurbansoft (ERP / POS)",
     filterDetp: "DETP (Laravel / Vue)",
     filterCuadreEnv: "CuadreEnv Ecosystem",
+    filterFranchelyZcm: "Franchely Zabala Web",
     filterFilmRadar: "FilmRadar",
     filterGamesWorld: "Games World",
     filterMlbStats: "MLB Stats",
@@ -280,6 +287,9 @@ export const projectTranslations = {
     filterUiLabs: "Frontend & UI Labs",
     filterFullStack: "Full-Stack & Next.js",
     viewDetailBtn: "View Technical Specs",
+    visitSite: "Visit Website",
+    visitSiteBtn: "Visit Live Website",
+    liveLinkField: "Production Live URL",
     modalOverview: "System Overview",
     modalArch: "Key Architectural Highlights",
     modalFeatures: "Core Modules & Features",
@@ -621,6 +631,68 @@ export const projectsDataI18n: ProjectItemI18n[] = [
       { label: { es: "Stack Completo", en: "Full Stack" }, value: { es: "Angular 21 + React 18 + .NET 8 + Express", en: "Angular 21 + React 18 + .NET 8 + Express" } },
       { label: { es: "Persistencia", en: "Database" }, value: { es: "Microsoft SQL Server", en: "Microsoft SQL Server" } },
       { label: { es: "Arquitectura", en: "Architecture" }, value: { es: "Onion 4-Tier + Microservicios", en: "4-Tier Onion + Microservices" } },
+    ],
+  },
+  {
+    id: "personal-franchelyzcm",
+    projectType: "personal",
+    category: "fullstack",
+    image: franchelyzcmImg,
+    tags: ["Landing Page", "JavaScript", "HTML5", "SCSS / CSS3", "i18n Multi-Idioma", "WhatsApp API", "Responsive Web"],
+    repoPath: "C:\\Users\\pelie\\source\\repos\\MyDev\\franchelyzcm",
+    liveUrl: "https://franchelyzcm.epena.dev/#portafolio",
+    categoryLabel: { es: "Proyecto Personal • Landing Page & Portafolio Web", en: "Personal Project • Landing Page & Web Portfolio" },
+    title: {
+      es: "Franchely Zabala — Portafolio Profesional & Sitio Web",
+      en: "Franchely Zabala — Professional Portfolio & Web Showcase",
+    },
+    shortDesc: {
+      es: "Sitio web y portafolio profesional para Community Manager y creadora de contenido con diseño editorial premium, feed interactivo estilo Instagram, soporte bilingüe (ES/EN) y cotizaciones directas vía WhatsApp.",
+      en: "Professional portfolio and landing page for a Community Manager and Content Creator featuring premium editorial aesthetics, interactive Instagram feed mockup, bilingual support (ES/EN), and WhatsApp API integration.",
+    },
+    role: { es: "Frontend Designer & Web Developer", en: "Frontend Designer & Web Developer" },
+    overview: {
+      es: "Diseño y desarrollo integral del sitio web profesional y portafolio interactivo para Franchely Zabala (Community Manager & Creative Content). La plataforma está optimizada para transmitir una identidad de marca sofisticada, moderna y confiable, incorporando un mockup interactivo de iPhone con feed de Instagram dinámico, selector bilingüe de idiomas (Español / Inglés) con persistencia de preferencias, catálogo de servicios detallados, galería de proyectos con modal de testimonios y un formulario de contacto inteligente que estructura automáticamente la solicitud del cliente para abrir una conversación directa en la API de WhatsApp.",
+      en: "End-to-end design and engineering of the professional portfolio website for Franchely Zabala (Community Manager & Creative Content). Crafted to express an elegant, modern brand identity, featuring an interactive iPhone Instagram feed simulator, full bilingual localization (Spanish / English) with preference persistence, comprehensive services catalog, project showcases with testimonial modals, and an automated inquiry form that formats requests directly for the WhatsApp API.",
+    },
+    architectureHighlights: {
+      es: [
+        "Estructura semántica HTML5 y estilos CSS modernos con paleta armónica en lavanda, violeta y verde esmeralda.",
+        "Sistema de internacionalización (i18n) en Vanilla JavaScript que conmuta fluidamente entre Español e Inglés con persistencia en localStorage.",
+        "Integración con WhatsApp API que formatea los campos del formulario de cotización en mensajes estructurados instantáneos.",
+        "Simulador interactivo de feed de Instagram en vista mobile adaptado a la estética de marca personal.",
+        "Despliegue y configuración en producción bajo subdominio propio (https://franchelyzcm.epena.dev).",
+      ],
+      en: [
+        "Semantic HTML5 architecture and modern CSS featuring curated lavender, purple, and emerald color palettes.",
+        "Client-side internationalization (i18n) engine in Vanilla JavaScript switching smoothly between Spanish and English with localStorage persistence.",
+        "WhatsApp API integration formatting customer inquiry fields into instant customized messaging templates.",
+        "Interactive mobile Instagram feed simulator matching personal brand guidelines and visual assets.",
+        "Production deployment and domain configuration under custom subdomain (https://franchelyzcm.epena.dev).",
+      ],
+    },
+    keyFeatures: {
+      es: [
+        "Hero Interactivo con Maqueta Móvil: Visualización de perfil social, métricas y botón flotante de WhatsApp.",
+        "Catálogo de Servicios: Tarjetas modulares de gestión de RRSS, fotografía, papelería creativa, asistencia y auditorías.",
+        "Sección Portafolio & Casos Reales: Exhibición de identidades visuales como Mug Studio y marcas aliadas.",
+        "Formulario de Contacto & Cotizador: Selección de servicios con enlace directo a WhatsApp y atención 24/7.",
+        "Soporte Bilingüe ES/EN: Conmutador dinámico de idioma accesible en la barra de navegación.",
+      ],
+      en: [
+        "Interactive Hero with Mobile Mockup: Showcase of social profile, metrics, and floating WhatsApp contact button.",
+        "Services Catalog: Modular cards for social media management, photography, creative stationery, and profile audits.",
+        "Portfolio & Case Studies: Showcase of visual branding projects such as Mug Studio and partner brands.",
+        "Smart Contact & Inquiry Form: Service selector with instant WhatsApp API forwarding.",
+        "Bilingual Localization (ES/EN): Dynamic navigation language switcher with instant rendering.",
+      ],
+    },
+    technicalSpecs: [
+      { label: { es: "Tipo de Proyecto", en: "Project Type" }, value: { es: "Landing Page & Portafolio Web", en: "Landing Page & Web Portfolio" } },
+      { label: { es: "Tecnologías Frontend", en: "Frontend Technologies" }, value: { es: "HTML5 + SCSS/CSS3 + Vanilla JS", en: "HTML5 + SCSS/CSS3 + Vanilla JS" } },
+      { label: { es: "Internacionalización", en: "Localization" }, value: { es: "i18n Bilingüe (Español / Inglés)", en: "Bilingual i18n (Spanish / English)" } },
+      { label: { es: "Integraciones", en: "Integrations" }, value: { es: "WhatsApp API + Web Hosting", en: "WhatsApp API + Web Hosting" } },
+      { label: { es: "Enlace en Vivo", en: "Live URL" }, value: { es: "franchelyzcm.epena.dev", en: "franchelyzcm.epena.dev" } },
     ],
   },
   {
